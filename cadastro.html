@@ -12,6 +12,13 @@
             const senha = document.getElementById('senha').value;
             const confirmeSenha = document.getElementById('confirme_senha').value;
 
+            const senhaRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
+
+            if (!senhaRegex.test(senha)) {
+                alert('A senha deve ter pelo menos 8 caracteres, incluindo pelo menos um número e um caractere especial.');
+                return;
+            }
+
             if (senha !== confirmeSenha) {
                 alert('As senhas não coincidem');
                 return;

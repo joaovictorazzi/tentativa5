@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="login.css">
     <script>
         function login() {
-            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
             const senha = document.getElementById('senha').value;
 
             const usuario = JSON.parse(localStorage.getItem('usuario'));
@@ -17,11 +17,11 @@
                 return;
             }
 
-            if (usuario.nome === nome && usuario.senha === senha) {
+            if (usuario.email === email && usuario.senha === senha) {
                 alert('Login realizado com sucesso!');
                 window.location.href = 'index.html';
             } else {
-                alert('Nome ou senha incorretos');
+                alert('Email ou senha incorretos');
             }
         }
     </script>
@@ -49,8 +49,8 @@
         <h1>Faça login para continuar</h1>
 
         <div class="caixa_texto">
-            <p>NOME</p>
-            <input type="text" name="nome" id="nome">
+            <p>EMAIL</p>
+            <input type="email" name="email" id="email">
         </div>
 
         <div class="caixa_texto">
